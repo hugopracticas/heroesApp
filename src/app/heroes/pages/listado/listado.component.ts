@@ -11,13 +11,13 @@ export class ListadoComponent implements OnInit {
 
   constructor( private heroesService: HeroesService ) { }
 
-  superHero: Heroe[] = [];
+  heroes: Heroe[] = [];
 
   ngOnInit(): void {
     this.heroesService.getHeroes()
       .subscribe( resp => {
         //resp[0].superhero
-        this.superHero = resp;
+        this.heroes = resp;
       } )
   }
 
